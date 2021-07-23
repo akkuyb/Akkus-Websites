@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="w3.css">
+	<title>Malayalam Radio | MalluFun</title>
+	<script src="playerjs.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<style>
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+	    background:#FFF;
+		font-family: 'Rubik', sans-serif;
+		color: #333333;
+	}
+	
+	a{text-decoration:none;}
+	
+	hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+	
+	ul {
+		list-style-type: none;
+		display: block;
+		padding: 0;
+	}
+	
+	.blink_me {
+		animation: blinker 0.5s linear infinite;
+	}
+	
+	@keyframes blinker {
+		50% {
+			opacity: 0;
+		}
+	}
+	
+	#myInput {
+		width:90%;
+		max-width: 400px;
+		padding: 8px;
+		margin: 16px auto 2px auto;
+		border-radius: 8px;
+	}
+	
+	#listcon {
+		margin-top: 25px;
+		padding: 5px;
+	}
+	
+	.bold {
+		font-weight: bold;
+	}
+	
+	.list {
+	    background: #EFEFEF;
+		border: 1px solid #9C9B9A;
+		outline: none;
+		font-size: 20px;
+		font-weight: bold;
+		width: 85%;
+		max-width: 400px;
+		padding: 6px;
+		margin: 8px auto;
+		border: 1px solid #CCC;
+		border-radius: 8px;
+		text-align: center;
+		display: block;
+	}
+
+	
+	.active,
+	.list:hover {
+		background-color: #C8144B;
+		color: #FFF;
+	}
+	
+	.parent {
+		padding: 5px 20px 20px 20px;
+		max-width: 500px;
+		margin: auto;
+		text-align: center;
+		margin-top: 225px;
+	}
+	
+	.player {
+		margin-top: 40px;
+		margin-bottom: 8px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 200px;
+		padding: 5px;
+	}
+	</style>
+	<div class="w3-top">
+		<div class="w3-bar w3-center w3-white">
+			<div id="fmplayer" class="player"></div>
+			<script>
+			var player = new Playerjs({
+				id: "fmplayer",
+				file: "https://playerservices.streamtheworld.com/api/livestream-redirect/CLUBFMUAEAAC.aac",
+				title: "fm"
+			});
+			</script>
+			<div id="currentdiv" class="w3-center" style="max-width:400px;margin:2px auto;padding:0 12px;">
+				<center>
+					<h4><span class="blink_me">&#9658;</span> <span id="currentfm" class="bold">Malayalam FM Radio</span></h4></center>
+			</div>
+			<hr/> </div>
+	</div>
+	<div class="parent">
+		<div id="listcon">
+		    
+		    <input id="myInput" type="search" placeholder="Search for radio stations.." oninput="mySearch();">
+			<ul id="myUL">
+				<li>
+					<button class="list active" onclick="player.api('play','https://playerservices.streamtheworld.com/api/livestream-redirect/CLUBFMUAEAAC.aac');topFunction();changeTitle('Club FM');">Club FM</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://bcovlive-a.akamaihd.net/19b535b7499a4719a5c19e043063f5d9/ap-southeast-1/6034685947001/playlist.m3u8');topFunction();changeTitle('Radio Mango');">Radio Mango</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://air.pc.cdn.bitgravity.com/air/live/pbaudio230/playlist.m3u8');topFunction();changeTitle('AIR Malayalam');"> AIR Malayalam</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/manalgam/icecast.audio');topFunction();changeTitle('Radio Mangalam');">Radio Mangalam</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://playerservices.streamtheworld.com/api/livestream-redirect/SUNO917_SC');topFunction();changeTitle('Radio Suno');"> Radio Suno</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://streamasiacdn.atc-labs.com/globalradio.aac');topFunction();changeTitle('Global Radio');"> Global Radio</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','http://stream.zeno.fm/fu94u25kqd0uv');topFunction();changeTitle('Onattukara FM');"> Onattukara FM</button>
+				</li>
+			
+				<li>
+					<button class="list" onclick="player.api('play','https://fps2.listen2myradio.com:2199/listen.php?ip=109.169.23.17&port=8761&type=s1');topFunction();changeTitle('Radio Talky');"> Radio Talky</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/macfast/icecast.audio');topFunction();changeTitle('Radio Macfest');"> Radio Macfest</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://fps5.listen2myradio.com:2199/listen.php?ip=78.129.139.48&port=8432&type=s1');topFunction();changeTitle('Radio Mattoli');">Radio Mattoli</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://167.114.131.90:5412/stream3');topFunction();changeTitle('Radio Malayalam USA');">Radio Malayalam USA</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://node-08.zeno.fm/pnafwp8atwzuv');topFunction();changeTitle('Aural Radio');">Aural Radio</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radiomalayalamfm.com/radio/8000/radio.mp3');topFunction();changeTitle('Radio Malayalam');">Radio Malayalam</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/mirchi98/icecast.audio');topFunction();changeTitle('Radio Mirchi');">Radio Mirchi</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://www.liveradio.es/http://65.0.142.186:8000/airtime_128');topFunction();changeTitle('Radio Kerala');"> Radio Kerala</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://cors.bitwize.com.lb/http://198.27.67.39:8000/pravasiradio.mp3');topFunction();changeTitle('Pravasi Bharati');"> Pravasi Bharati</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_calicut/icecast.audio');topFunction();changeTitle('AIR Calicut');">AIR Calicut</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://air.pc.cdn.bitgravity.com/air/live/pbaudio083/playlist.m3u8');topFunction();changeTitle('AIR Calicut Real FM');">AIR Calicut Real FM</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_kochi/icecast.audio');topFunction();changeTitle('AIR Kochi');">AIR Kochi</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://air.pc.cdn.bitgravity.com/air/live/pbaudio044/playlist.m3u8');topFunction();changeTitle('AIR Rainbow Kochi');">AIR Rainbow Kochi</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_rissur_radio/icecast.audio');topFunction();changeTitle('AIR Thrissur');">AIR Thrissur</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_kannur/icecast.audio');topFunction();changeTitle('AIR Kannur');">AIR Kannur</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_deviculam/icecast.audio');topFunction();changeTitle('AIR Devikulam');">AIR Devikulam</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://air.pc.cdn.bitgravity.com/air/live/pbaudio101/playlist.m3u8');topFunction();changeTitle('AIR Manjeri');"> AIR Manjeri</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_kkavarait/icecast.audio');topFunction();changeTitle('AIR Kavaratti');">AIR Kavaratti</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/air_anantapur_radio/icecast.audio');topFunction();changeTitle('Radio Ananthapuri');"> Radio Ananthapuri</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://stream.zeno.fm/tuuegh0mqwzuv');topFunction();changeTitle('Radio Benziger');">Radio Benziger</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://api.codetabs.com/v1/proxy?quest=http://51.255.235.165:5480/;stream.mp3');topFunction();changeTitle('Radio Asia UAE');">Radio Asia UAE</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://r4radio.com:8000/live');topFunction();changeTitle('R4 Radio');">R4 Radio</button>
+				</li>
+				
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://prclive1.listenon.in:9908/;');topFunction();changeTitle('Radio City Malayalam');">Radio City Malayalam</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://radio.hostonnet.com:8000/;stream.mp3');topFunction();changeTitle('Kerala Radio');">Kerala Radio</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://pallaviradio.out.airtime.pro/pallaviradio_a');topFunction();changeTitle('Pallavi Radio');">Pallavi Radio</button>
+				</li>
+				
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://stream.zeno.fm/9the78hswk8uv');topFunction();changeTitle('Janavani Radio');">Janavani Radio</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://s10.voscast.com:8530/;');topFunction();changeTitle('Ente Lokam Radio');">Ente Lokam Radio</button>
+				</li>
+				
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://stream.zeno.fm/512rbf1e3qzuv');topFunction();changeTitle('98.6 Malayalam');">98.6 Malayalam</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://listen.radioking.com/radio/305023/stream/354512');topFunction();changeTitle('Pattupetti Radio');">Pattupetti Radio</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://stream.zeno.fm/v6yf8nyrwk8uv');topFunction();changeTitle('Radio Mix');">Radio Mix</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://stream.zenolive.com/taknefee3qzuv.aac');topFunction();changeTitle('Hello Radio');"> Hello Radio</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://edge.mixlr.com/channel/gvufg');topFunction();changeTitle('Asha Radio');">Asha Radio</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://servidor39-4.brlogic.com:7196/live');topFunction();changeTitle('Radio Souparnika');">Radio Souparnika</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://stream.zeno.fm/ekthuu9bfwzuv');topFunction();changeTitle('Radio Mythri');">Radio Mythri</button>
+				</li>
+				
+				
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://node-25.zeno.fm/nvh52yer01zuv?rj-ttl=5&rj-tok=AAABdW3i3noAlZtv4wxVBjY6iw');topFunction();changeTitle('CE Talks Radio');">CE Talks Radio</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://stream.zenolive.com/97yqfb4ts0quv');topFunction();changeTitle('Chithra Hits');">Chithra Hits</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://stream.zenolive.com/5vva7u4ts0quv');topFunction();changeTitle('Mohanlal Hits');">Mohanlal Hits</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://radio.knpinfotech.co.in:8000/;');topFunction();changeTitle('KNP Infotech Radio');">KNP Infotech Radio</button>
+				</li>
+				
+				
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://199.195.194.140:8012/stream');topFunction();changeTitle('Sehion Radio');">Sehion Radio</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/njanmix/icecast.audio');topFunction();changeTitle('Njan Malayali FM');">Njan Malayali FM</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://s35.myradiostream.com:28232/;');topFunction();changeTitle('Radio Ayyappa');">Radio Ayyappa</button>
+				</li>
+				
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://viadj.viastreaming.net:7084/;stream.mp3');topFunction();changeTitle('PSALMS Radio');">PSALMS Radio</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','http://viadj.viastreaming.net:7233/;listen.mp3');topFunction();changeTitle('Gloria Radio');">Gloria Radio</button>
+				</li>
+				
+				<li>
+					<button class="list" onclick="player.api('play','https://radioindia.net/radio/pace/icecast.audio');topFunction();changeTitle('Radio Peace');">Radio Peace</button>
+				</li>
+				<li>
+					<button class="list" onclick="player.api('play','https://sonic01.instainternet.com/8002/stream');topFunction();changeTitle('Radio Tirur');">Radio Tirur</button>
+				</li>
+				
+				
+				
+				
+			</ul>
+		</div>
+	</div>
+	<script>
+	// Get the container element
+	var btnContainer = document.getElementById("listcon");
+	// Get all buttons with class="btn" inside the container
+	var btns = btnContainer.getElementsByClassName("list");
+	// Loop through the buttons and add the active class to the current/clicked button
+	for(var i = 0; i < btns.length; i++) {
+		btns[i].addEventListener("click", function() {
+			var current = document.getElementsByClassName("active");
+			current[0].className = current[0].className.replace(" active", "");
+			this.className += " active";
+		});
+	}
+
+	function topFunction() {
+		//document.body.scrollTop = 0; // For Safari
+		//document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+		//
+	}
+
+	function changeTitle(val) {
+		document.getElementById("currentfm").innerHTML = val;
+		//document.getElementById("currentdiv").style.display = "inline-block";
+	}
+	</script>
+	<script>
+	function mySearch() {
+		var input, filter, ul, li, a, i, txtValue;
+		input = document.getElementById("myInput");
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("myUL");
+		li = ul.getElementsByTagName("li");
+		for(i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("button")[0];
+			txtValue = a.textContent || a.innerText;
+			if(txtValue.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+	
+	</script>
+	
+	
+</body>
+
+</html>
